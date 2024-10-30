@@ -2,6 +2,9 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+# Adicionar título ao app
+st.header("App sprint 5")
+
 car_data = pd.read_csv('vehicles_us.csv') # lendo os dados
 hist_button = st.button('Criar histograma') # criar um botão
 
@@ -25,7 +28,7 @@ if disp_button: # se o botão for clicado
     # criar um histograma
     fig = px.scatter(car_data, x="odometer", y="price")
     # exibir um gráfico Plotly interativo
-    
+
     st.plotly_chart(fig, use_container_width=True)
 
 
